@@ -24,26 +24,71 @@
             </nav>	
             <!-- Page Body -->
             <div class="container">
+                <div class="row">
+                    <div class="col s1">1</div>
+                    <div class="col s1">2</div>
+                    <div class="col s1">3</div>
+                    <div class="col s1">4</div>
+
+                    <div class="col s1">5</div>
+                    <div class="col s1">6</div>
+                    <div class="col s1">7</div>
+                    <div class="col s1">8</div>
+
+                    <div class="col s1">9</div>
+                    <div class="col s1">10</div>
+                    <div class="col s1">11</div>
+                    <div class="col s1">12</div>
+                    
+                    
+                </div>
+                <div class="row">
+                    fila 2
+                </div>
                 <br />
 
                 <h3>Smart Home Web Client!</h3>
-                <label>Usuario</label>
-                <input type="text" placeholder="jperez" id="iUser">
-                <label>Contraseña</label>
-                <input type="password" id="iPass">
-                <input type="number" id="num">
+
+                <div class="row">
+                    <div class="input-field col s12 xl6">
+                        <i class="material-icons prefix " color="secondary">accessibility</i>
+                        <label>Usuario</label>
+                        <input type="text" placeholder="jperez" id="iUser">
+                    </div>
+                    <div class="input-field col s12 xl6">
+                        <i class="material-icons prefix">lock</i>
+                        <label for="iPass">Contraseña</label>
+                        <input type="password" id="iPass">
+                    </div>
+                </div>
+                <input type="text" class="datepicker">
                 <p id="parrafo"></p>
                 <input type="button" class="btn" id="btnLogin" value="Login">
          
-                
+             
                 <br/>
                 <div class="row">
                     <div class="input-field col s12 m12 l12 xl12">
                         <textarea id="textarea_1" class="materialize-textarea" style="height: 150px;" readonly></textarea>
                     </div>
-                    <div class="col s4 m4 l2 xl2">
-                        
+                    <p class="range-field">
+                        <input type="range" id="test5" min="0" max="100" />
+                      </p>
+                    <div class="input-field col s12">
+                        <select multiple id="c">
+                          <option value="" disabled selected>Choose your option</option>
+                          <option value="1">Option 1</option>
+                          <option value="2">Option 2</option>
+                          <option value="3">Option 3</option>
+                        </select>
+                        <label>Materialize Multiple Select</label>
+                      </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m8 l4 xl6">
                         <button class="btn waves-effect waves-light button-view" id="btnListar">Listar</button>
+                    </div>
+                    <div class="col s12 m4 l8 xl6 ">
                         <button class="btn waves-effect waves-light button-view" id="btnAgregar">Agregar</button>
                     </div>
                 </div>

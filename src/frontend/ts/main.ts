@@ -1,3 +1,5 @@
+var M;
+
 class Main implements EventListenerObject {
     users: Array<Usuario> = new Array();
 
@@ -11,15 +13,33 @@ class Main implements EventListenerObject {
 
     }
 
+    buscarElementosEnBackEnd() {
+        var xmlReq = new XMLHttpRequest();        
+        xmlReq.onreadystatechange = () => {
+            console.log(xmlReq.readyState,xmlReq.responseText);
+            if (xmlReq.readyState == 4) {
+                
+                if (xmlReq.status == 200) {
+                   
+                    console.log("llego la respuesta del servidor!",xmlReq.responseText);
+                } else {
+                    alert("Error al buscar los datos!");
+                }
+            }
+        }
+        xmlReq.open("GET", "http://localhost:8000/devices");
+        xmlReq.send();
 
+    }
 
     handleEvent(event) {
         if (event.target.id == "btnListar") {
+            this.buscarElementosEnBackEnd();
             for (var user of this.users) {
 
                 //TODO cambiar ESTO por mostrar estos datos separados por "-" 
                 //en un parrafo "etiqueta de tipo <p>"
-                console.log(user.mostrar())
+              
             }
         } else if (event.target.id == "btnLogin") {
 
@@ -48,6 +68,11 @@ class Main implements EventListenerObject {
 
 
 window.addEventListener("load", () => {
+
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems,{});
+    var elemsC = document.querySelectorAll('.datepicker');
+    var instances = M.Datepicker.init(elemsC, {autoClose:true});
 
     var main: Main = new Main();
     var btnListar: HTMLElement = document.getElementById("btnListar");
