@@ -8,3 +8,8 @@ body {
 main {
     flex: 1 0 auto;
 }
+.titulo{
+    color: brown;
+    font-weight: bold;
+    font-size: large;
+}
