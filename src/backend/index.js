@@ -12,7 +12,25 @@ app.use(express.json());
 app.use(express.static('/home/node/app/static/'));
 
 //=======[ Main module code ]==================================================
-
+app.post('/device/',function(req,res){
+    console.log("llego = "+req.body.id);
+    if(req.body.texto==undefined || req.body.texto==null || req.body.texto.length<4){
+        res.status(409);
+        res.send("el texto no es valido");
+    }else{
+        
+        res.status(200)
+        res.send("Todo ok");
+    }
+    
+});
+app.get('/pepe/', function(req,res) {
+    utils.query("select * from Devices",function(err,rsp,fields){
+        if(err!=null)
+        res.send(JSON.stringify(rsp));
+    });
+  
+});
 app.get('/devices/', function(req, res, next) {
     devices = [
         { 

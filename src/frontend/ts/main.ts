@@ -98,13 +98,15 @@ class Main implements EventListenerObject,HttpResponse {
             //Ir al backend y aviasrle que el elemento cambio de estado
             //TODO armar un objeto json con la clave id y status y llamar al metodo ejecutarBackend
            
-            alert("El elemento "+elemento.id+" cambia de estado a =" + elemento.checked);
+            alert("El elemento " + elemento.id + " cambia de estado a =" + elemento.checked);
+          
         }else {
             //TODO cambiar esto, recuperadon de un input de tipo text
             //el nombre  de usuario y el nombre de la persona
             // validando que no sean vacios
-
-            this.users.push(new Usuario("usernuevo", "usernuevo"));
+            console.log("yendo al back");
+            this.framework.ejecutarBackEnd("POST", "http://localhost:8000/device", this, {});
+           
         }
     }
 }
